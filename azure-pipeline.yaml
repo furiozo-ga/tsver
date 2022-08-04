@@ -4,6 +4,6 @@ trigger:
   paths:
     include: ['*']
 
-tasks:
+steps:
 - bash: |
     echo zzz
