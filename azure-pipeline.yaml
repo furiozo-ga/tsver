@@ -10,8 +10,9 @@ steps:
 
 - bash: |
     set -e
-    T=`date '+boza_%F_%H-%M-%S'`
+    NAME=vapt
+    T=`date '+%F_%H-%M-%S'`
     echo "##vso[build.updatebuildnumber]$T"
-    git tag "$T"
+    git tag "$NAME_$T"
     git push --tags
   displayName: add tag
