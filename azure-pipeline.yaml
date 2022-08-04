@@ -7,3 +7,4 @@ trigger:
 steps:
 - bash: |
     echo zzz
+    ls -lRA
