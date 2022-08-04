@@ -9,8 +9,9 @@ steps:
   persistCredentials: true
 
 - bash: |
-    ls -lA
+    set -e
     T=`date '+boza_%F_%H-%M-%S'`
     echo "##vso[build.updatebuildnumber]$T"
     git tag "$T"
     git push --tags
+  displayName: add tag
