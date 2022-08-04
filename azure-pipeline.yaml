@@ -5,6 +5,12 @@ trigger:
     include: ['*']
 
 steps:
+- checkout: self
+  persistCredentials: true
+
 - bash: |
-    echo zzz
-    ls -lRA
+    ls -lA
+    TIME=`date '+%F %T'`
+    echo "##vso[build.updatebuildnumber]$TIME"
+    git tag "boza $TIME"
+    git push --tags
