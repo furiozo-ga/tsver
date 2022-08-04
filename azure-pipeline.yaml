@@ -12,7 +12,7 @@ steps:
     set -e
     NAME=vapt
     T=`date '+%F_%H-%M-%S'`
-    T="$NAME\_$T"
+    T="${NAME}_$T"
     echo "##vso[build.updatebuildnumber]$T"
     git tag "$T"
     git push --tags
