@@ -10,7 +10,7 @@ steps:
 
 - bash: |
     ls -lA
-    TIME=`date '+%F %H-%M-%S'`
-    echo "##vso[build.updatebuildnumber]$TIME"
-    git tag "boza $TIME"
+    T=`date '+boza_%F_%H-%M-%S'`
+    echo "##vso[build.updatebuildnumber]$T"
+    git tag "$T"
     git push --tags
